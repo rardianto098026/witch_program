@@ -1,0 +1,49 @@
+@page
+@model Code_Test.Pages.witch_program_with_csharp
+@{
+    ViewData["Title"] = "WITCH PROGRAM WITH C#";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/witch_program.css">
+</head>
+<body>
+    <div class="container">
+        <h1>@ViewData["Title"]</h1>
+        <form method="post">
+            <div class="input-group">
+                <label for="ageOfDeathA">Age of Death for Person A:</label>
+                <input type="number" id="ageOfDeathA" name="AgeOfDeathA" required>
+            </div>
+            <div class="input-group">
+                <label for="yearOfDeathA">Year of Death for Person A:</label>
+                <input type="number" id="yearOfDeathA" name="YearOfDeathA" required>
+            </div>
+            <div class="input-group">
+                <label for="ageOfDeathB">Age of Death for Person B:</label>
+                <input type="number" id="ageOfDeathB" name="AgeOfDeathB" required>
+            </div>
+            <div class="input-group">
+                <label for="yearOfDeathB">Year of Death for Person B:</label>
+                <input type="number" id="yearOfDeathB" name="YearOfDeathB" required>
+            </div>
+            <button type="submit">Calculate Average</button>
+        </form>
+        @if (Model.AverageResult.HasValue)
+        {
+            <div id="result">
+                <p>The average number of people killed in the birth years is: @Model.AverageResult</p>
+            </div>
+        }else{
+            <div id="result">
+                <p>-1</p>
+            </div>
+        }
+    </div>
+</body>
+</html>
