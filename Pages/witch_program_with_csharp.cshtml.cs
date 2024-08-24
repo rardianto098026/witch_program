@@ -56,7 +56,7 @@ namespace Code_Test.Pages
             }
             else
             {
-                AverageResult = null; 
+                AverageResult = -1; 
             }
         }
 

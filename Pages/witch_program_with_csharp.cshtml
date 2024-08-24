@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css/witch_program.css">
 </head>
 <body>
+    <a href="/Index" class="back-button">Back</a>
     <div class="container">
         <h1>@ViewData["Title"]</h1>
         <form method="post">
@@ -36,13 +37,15 @@
         </form>
         @if (Model.AverageResult.HasValue)
         {
-            <div id="result">
-                <p>The average number of people killed in the birth years is: @Model.AverageResult</p>
-            </div>
-        }else{
-            <div id="result">
-                <p>-1</p>
-            </div>
+            if (Model.AverageResult == -1){
+                <div id="result">
+                    <p>-1</p>
+                </div>
+            }else{
+                <div id="result">
+                    <p>The average number of people killed in the birth years is: @Model.AverageResult</p>
+                </div>
+            }
         }
     </div>
 </body>
